@@ -6,15 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src='../js/vue.js'></script>
+    <!-- 
+    ./ 当前目录
+    ../ 父级目录
+    /  根目录
+    -->
 </head>
 <body>
     <div>{{fullname}}</div>
-    <div id="root">{{fullname}}</div>
+    <div id="root">
+        {{fullName}}</div>
     <script>
 new Vue({
     el:"#root",
     data:{
         fullname:"xiaoming",
+    },
+    watch:{
+        firstName:{
+            immediate:ture,
+            handler(newValue,oldValue){
+                this.fullName = this.firstName + '-' + newValue
+            }
+        },
+        lastName(newValue,oldValue){
+            this.fullName
+        }
+
     }
 })
 
