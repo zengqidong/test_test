@@ -9,15 +9,45 @@
 
 </head>
 <body>
-    <div id="root">
+     <!--
+          beforeCreate 
+          Created
+          beforeMount
+                    所有对DOM节点的操作，最终都不奏效
+          mounted
 
+          beforeUpdate
+                        数据是新的，页面是旧的
+          updated
+
+          beforeDestroy
+
+
+    
+    
+    
+    
+    -->
+
+    <div id="root">
+        <h2>当前页面求和为：{{sum}}</h2>
+        <button @click="add">点我加1</button>
     </div>
     <script>
         Vue.config.productionTip= false,
         new Vue({
             el:"#root",
             data:{
+                sum:0
+            },
+            methods:{
+                add(){
+                    this.sum+=1
+                }
+            },
 
+            beforeCreate(){
+            console.log(this.sum);
             }
 
         })
