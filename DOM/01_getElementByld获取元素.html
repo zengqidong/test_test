@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>getElementById</title>
+</head>
+<body>
+    <div id='time'>2019-9-9</div>
+
+
+    <ol>
+        <li>生僻字</li>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ol>
+    <script>
+        document.getElementById('time');
+  
+        //获取标签名
+        //element.getElementsByTagName
+
+        var ol = document.getElementsByTagName('ol');
+        console.log(ol[0].getElementsByTagName("li"));
+    </script>
+</body>
+</html>
