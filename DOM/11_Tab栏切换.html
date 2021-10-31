@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tab_list li{
+            float:left;
+            height: 39px;
+            line-height: 39px;
+            padding: 0 20px;
+            text-align: center;
+            cursor:pointer;
+
+        }
+        .tab_list .current{
+            background-color: #c81623;
+            color: #fff;
+
+        }
+
+        .item_info{
+            padding:20px 0 0 20px;
+        }
+        .item {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="tab">
+        <div class="tab_list">
+            <ul>
+                <li class='current'>商品介绍</li>
+                <li>规格与包装</li>
+                <li>售后保障</li>
+                <li>商品评价</li>
+                <li>手机社区</li>
+            </ul>
+        </div>
+        <div class="tab_con">
+            <div class="item">商品</div>
+            <div class="item">规格</div>
+            <div class="item">售后</div>
+            <div class="item">评价</div>
+            <div class="item">社区</div>
+        </div>
+    </div>
+    <script>
+        var tab_list = document.querySelector('.tab_list');
+        var lis = document.querySelectorAll('li');
+        var  items = document.querySelectorAll('.item');
+
+        lis.forEach((li,i)=>{
+            li.setAttribute('index',i)
+            li.onclick = function(){
+               lis.forEach((li)=>{
+                li.className = '';
+               }) 
+               this.className = 'current';
+                items.forEach((item)=>{
+                    item.style.display = 'none';
+                })   
+               items[i].style.display = 'block';
+            }
+        })
+    </script>
+</body>
+</html>

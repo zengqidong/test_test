@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    //文本节点 元素类型是3
+    //元素   head、body、h1、<a></a>          1
+    //属性       2 
+
+
+    //得到的是离元素最近的元素 element.parentNode
+    //子节点  childNodes 
+    //children  实际开发常用的
+
+    <script>
+        //firstChild 第一个子节点 不管是文本节点还是元素节点
+
+        //firstElementChiild  返回第一个元素节点 lastElementChild
+        // ie9支持
+        // 实际开发    返回第几个元素   children[i]
+
+
+
+        // 1.兄弟节点  nextSibling  包含元素和文本节点  previousSibling
+   // ie9支持
+        // 2.nextElementSibling  得到下一个兄弟元素节点   
+    </script>
+    //创建和添加节点
+<ul></ul>
+<script>
+    //1.创建节点      
+var li = document.creatElement('li');
+  //2.添加节点  node.appendChild(child)  node 父级 child 子级   push 追加元素
+  //    node.insertBefore(child,指定元素)
+
+  var lili = document.createElement('li')
+  ul.insertBefore(lili,ul.children[0])
+  //3. 删除元素
+  //node.removeChild(child)
+
+  //4.克隆节点
+  // node.cloneNode(); 括号为空或者里面是false  浅拷贝  只复制标签，不复制内容
+//node.cloneNode(true);  深拷贝 复制内容
+</script>
+</body>
+</html>
