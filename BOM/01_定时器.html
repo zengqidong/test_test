@@ -1,0 +1,20 @@
+<!-- 1.   setTimeout() 只调用一次
+     2.   setInterval()  间隔调用
+-->
+
+<script>
+     var i=0;
+     time=null
+     while(i<100){
+          if(time){
+          console.log(time);
+          console.log('6');
+     }
+     time = setTimeout(()=>{
+          console.log(time);
+          console.log('12');
+          time=null;
+     },12)
+     i++;
+     }
+</script>

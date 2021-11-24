@@ -1,0 +1,12 @@
+<script>
+    const map = new Map();
+    for (let i = 0 ; i<nums.length;i++){
+        complement = target - num[i];
+        if(map.has(complement)){
+            return [map.get(complement),i]
+        }else{
+            map.set(num[i],i);
+        }
+    }
+    return [];
+</script>

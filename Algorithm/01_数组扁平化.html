@@ -1,0 +1,54 @@
+<script>
+    arr = [1, [2, 3, [4, 5,6]]]
+//     function flatten(arr) {
+//     var res = [];
+//     arr.forEach(item => {
+//         if(Array.isArray(item)) {
+//             res = res.concat(flatten(item));
+//         } else {
+//             res.push(item);
+//         }
+//     });
+//     return res;
+// }
+// console.log(flatten(arr));
+// 复写
+// function flatten(arr){
+//     var res = [];
+//     arr.forEach(item =>{
+//         if(Array.isArray(item)){
+//             console.log(item);
+//              res = res.concat(flatten(item));
+//         }
+//         else{
+//             res.push(item);
+//         }
+//     });
+//     return res;
+// }
+// console.log(flatten(arr));
+// 
+function flatten(arr){
+    let res=[];
+    arr.map(item=>{
+        if(Array.isArray(item)){
+            res = res.concat(flatten(item))
+        }
+        else{
+             res.push(item)
+
+        }
+    })
+    return res;
+}
+console.log(flatten(arr));
+// 方法2
+// let arr = [[0, 1], [2, 3], [4,[5,6,7]]]
+// const newArr = function(arr){
+//    return arr.reduce((pre,cur)=>pre.concat(Array.isArray(cur)?newArr(cur):cur),[])
+// }
+// console.log(newArr(arr)); //[0, 1, 2, 3, 4, 5, 6, 7]
+//   // return arr.reduce((pre,cur)=> pre.concat(Array.isArray(cur)?newArr(cur):cur),[])
+</script>
+
+
